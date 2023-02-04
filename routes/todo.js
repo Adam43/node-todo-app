@@ -1,5 +1,7 @@
+import express from "express";
 import { Router } from "express";
 import morgan from "morgan";
+import { nanoid } from "nanoid";
 
 
 export default function setupTodoRouter(db) {
@@ -60,7 +62,7 @@ export default function setupTodoRouter(db) {
   });
 
   router.delete("/:id", function (request, response) {
-    const todoId = request.params.todo;
+    const todoId = request.params.id;
     const todoIndex = db.data.todos.findIndex(
       (currentTodo) => currentTodo.id === todoId
     );
@@ -69,10 +71,7 @@ export default function setupTodoRouter(db) {
     db.write();
     response.status(200).json({
       success: true,
-      todos: todo.data.todos,
     });
-
-    const name = [1, 2, 3, 4];
   });
 
   router.get("/:id", function (request, response) {
