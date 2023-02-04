@@ -86,13 +86,3 @@ describe("Just testing the server", function () {
     })
 })
 
-
-// it("It should delete an item on my todo list"), (done) => {
-//     request(server)
-//     .delete
-// }
-
-// Classwork 02/01/2023: Write tests for each of the todo routes.
-//Each test should contain a jest expect UNLESS that test is explicitly checking for just a status code.
-//Example: For the POST method of /todo,
-//you would write a test to check the status code AND check if the response body returns a { success: true}.
