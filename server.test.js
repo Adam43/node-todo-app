@@ -7,7 +7,7 @@ describe("Just testing the server", function () {
   describe("Testing the /todo route", function () {
     it("Should be unable to get todos without flag", function (done) {
       request(server)
-        .get("/todo")
+        .get("/todo?admin=true")
         .expect(401)
         .end(function (err) {
           if (err) {
@@ -32,6 +32,20 @@ describe("Just testing the server", function () {
           }
         });
     });
+
+//GET | An specific identifier is added 
+    it("should be able to get a todo", function(done){
+      request(server)
+        .get("/todo/49-a?admin=true")
+        .expect(200)
+        .end(function(err, response){
+          if(err){
+              throw err;
+          }else{
+              done();
+          }
+      });
+  });
 
 //POST
     it("/POST It should add a new todo", (done) => {

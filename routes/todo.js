@@ -20,7 +20,7 @@ export default function setupTodoRouter(db) {
 
   router.get("/:todo", function (request, response) {
     const todo = request.params.todo;
-    const currentTdo = db.data.todos.find((todoItem) => todoItem.id === todo);
+    const currentTodo = db.data.todos.find((todoItem) => todoItem.id === todo);
 
     response.status(200).json({
       success: true,
