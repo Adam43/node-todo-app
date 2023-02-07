@@ -34,7 +34,7 @@ describe("Just testing the server", function () {
         });
     });
 
-//GET | An specific identifier is added 
+//GET | A specific identifier is added 
     it("should be able to get a todo", function(done){
       request(server)
         .get("/todo/49-a?admin=true")
