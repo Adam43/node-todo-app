@@ -7,7 +7,7 @@ describe("Just testing the server", function () {
   describe("Testing the /todo route", function () {
     it("Should be unable to get todos without flag", function (done) {
       request(server)
-        .get("/todo?admin=true")
+        .get("/todo")
         .expect(401)
         .end(function (err) {
           if (err) {
@@ -97,6 +97,6 @@ describe("Just testing the server", function () {
                 .end(done);
                     
         });
-    })
-})
+    });
+});
 
