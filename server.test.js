@@ -3,6 +3,7 @@ import createServer from "./server.js";
 
 const server = await createServer();
 
+//GET | Should be an unauthorized route
 describe("Just testing the server", function () {
   describe("Testing the /todo route", function () {
     it("Should be unable to get todos without flag", function (done) {
